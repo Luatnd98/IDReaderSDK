@@ -1,10 +1,11 @@
 plugins {
-    alias(libs.plugins.android.application)
+//    alias(libs.plugins.android.application)
+    id("com.android.library")
     id("maven-publish")
 }
 
 group = "com.github.Luatnd98"
-version = "1.0.0"
+version = "dualiusb"
 
 configure<PublishingExtension> {
     publications {
@@ -20,15 +21,15 @@ android {
     namespace = "com.duali.dualiusb"
     compileSdk = 34
 
-    defaultConfig {
-        applicationId = "com.duali.dualiusb"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+//    defaultConfig {
+//        applicationId = "com.duali.dualiusb"
+//        minSdk = 24
+//        targetSdk = 34
+//        versionCode = 1
+//        versionName = "1.0"
+//
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+//    }
 
     buildTypes {
         release {
