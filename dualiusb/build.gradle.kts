@@ -7,29 +7,24 @@ plugins {
 group = "com.github.Luatnd98"
 version = "dualiusb"
 
-configure<PublishingExtension> {
-    publications {
-        create<MavenPublication>("maven") {
-            artifact(file("dualiusb-v1.0.14.aar")) {
-                extension = "aar"
-            }
-        }
-    }
-}
+//configure<PublishingExtension> {
+//    publications {
+//        create<MavenPublication>("maven") {
+//            artifact(file("dualiusb-v1.0.14.aar")) {
+//                extension = "aar"
+//            }
+//        }
+//    }
+//}
 
 android {
     namespace = "com.duali.dualiusb"
     compileSdk = 34
 
-//    defaultConfig {
-//        applicationId = "com.duali.dualiusb"
-//        minSdk = 24
-//        targetSdk = 34
-//        versionCode = 1
-//        versionName = "1.0"
-//
-//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//    }
+    defaultConfig {
+        minSdk = 24
+        targetSdk = 34
+    }
 
     buildTypes {
         release {
@@ -41,8 +36,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.Luatnd98"
+            artifactId = "dualiusb"
+            version = "1.0.14"
+
+            artifact(file("dualiusb-v1.0.14.aar")) {
+                extension = "aar"
+            }
+        }
     }
 }
 
