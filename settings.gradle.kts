@@ -24,3 +24,5 @@ dependencyResolutionManagement {
 rootProject.name = "IDCardReaderSDK"
 include(":app")
 include(":dualiusb")
+include(":FacePassAndroidSDK")
+include(":dkcloudid-pcsc")
